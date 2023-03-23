@@ -10,18 +10,18 @@ body {
 }
 
 header>img {
-    max-width: 110%;
+    max-width: 100%;
 }
 
 header a img {
-    border-radius: 50%;
+    border-radius: 100%;
     display: block;
     margin: auto;
-    margin-top: -50px;
+    margin-top: -10px;
 }
 
 main {
-    max-width: 1024px;
+    max-width: 1000px;
     margin: auto;
     margin-top: -25px;
     border-left: 1px dashed silver;
@@ -30,7 +30,7 @@ main {
 }
 
 article {
-    padding: 1em;
+    padding: 2em;
 }
 
 article p {
@@ -70,21 +70,19 @@ a {
     color: black;
 }
 
-header>img,
-figure>img,
-#map {
+.shadow{
     box-shadow:
-        0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.2);
+        0 4px 8px 0 rgb(0, 0, 0),
+        0 6px 20px 0 rgb(6, 6, 7);
 
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 220px) {
     main {
         border: none;
     }
 
     #map {
-        width: 100%;
+        width: 50%;
     }
 }
