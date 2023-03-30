@@ -93,12 +93,17 @@ const STOPS = [
         lng: 174.8,
         wikipedia: "https://de.wikipedia.org/wiki/Auckland"
     } ];
-console.log(STOPS);
 
-console.log(STOPS[0]);
-console.log(STOPS[1]);
-console.log(STOPS[2]);
-console.log(STOPS.length);
+
+for (let stop of STOPS){
+    console.log(stop);
+    console.lot(stop.title);
+    console.log (stop.user);
+    console.log (stop.lat);
+    console.log (stop.lng);
+    console.log (stop.wikipedia);
+
+}
 
 let map = L.map('map').setView([stop_lat,stop_len], zoom);
 
