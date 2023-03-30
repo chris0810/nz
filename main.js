@@ -97,7 +97,7 @@ const STOPS = [
 
 for (let stop of STOPS){
     console.log(stop);
-    console.lot(stop.title);
+    console.log (stop.title);
     console.log (stop.user);
     console.log (stop.lat);
     console.log (stop.lng);
