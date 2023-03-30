@@ -97,23 +97,34 @@ const STOPS = [
 
 
 
-let map = L.map('map').setView([stop_lat,stop_len], zoom);
+let map = L.map('map').setView([stop_lat,stop_len], zoom );
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+let osm= L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-    
+let water=L.tileLayer.provider('Stamen.Watercolor').addTo(map);
+L.control.layers({
+    "Openstreetmap": osm ,
+    "Watercolor" : water,
+}).addTo(map);
+
+L.control.scale({metric : true}).addTo(map);    
 
 for (let stop of STOPS){
-        console.log(stop);
-        console.log (stop.title);
-        console.log (stop.user);
-        console.log (stop.lat);
-        console.log (stop.lng);
-        console.log (stop.wikipedia);
         
-        L.marker([stop.lat,stop.lng]).addTo(map)
-        .bindPopup(stop.title)
-        .openPopup();
+        
+        let marker =L.marker([stop.lat,stop.lng],{opacity: 0.5,}) 
+             .addTo(map)
+        .bindPopup(`<h3>${stop.title}<h3>
+        <a href = ${stop.wikipedia} ">Wikipedia</a>`
+        );
+        
+        
+        
+        if (stop.user == "chris0810"){
+            marker.openPopup();
+        console.log("Mein Marker", stop);    
+        } 
+
     }
