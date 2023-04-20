@@ -104,9 +104,14 @@ let osm= L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 let water=L.tileLayer.provider('Stamen.Watercolor').addTo(map);
+let Cycle=L.tileLayer.provider('CyclOSM').addTo(map);
+let esri=L.tileLayer.provider('Esri.WorldStreetMap').addTo(map);
 L.control.layers({
     "Openstreetmap": osm ,
     "Watercolor" : water,
+    "CyclOSM": Cycle,
+    "Esri.WorldStreetMap": esri,
+
 }).addTo(map);
 
 L.control.scale({metric : true}).addTo(map);    
