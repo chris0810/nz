@@ -106,6 +106,11 @@ let osm= L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 let water=L.tileLayer.provider('Stamen.Watercolor').addTo(map);
 let Cycle=L.tileLayer.provider('CyclOSM').addTo(map);
 let esri=L.tileLayer.provider('Esri.WorldStreetMap').addTo(map);
+
+
+L.control.scale({metric : true}).addTo(map);    
+
+map.addControl(new L.Control.Fullscreen());
 L.control.layers({
     "Openstreetmap": osm ,
     "Watercolor" : water,
@@ -113,8 +118,6 @@ L.control.layers({
     "Esri.WorldStreetMap": esri,
 
 }).addTo(map);
-
-L.control.scale({metric : true}).addTo(map);    
 
 for (let stop of STOPS){
         
