@@ -114,7 +114,7 @@ L.control.scale({metric : true}).addTo(map);
 for (let stop of STOPS){
         
         
-        let marker =L.marker([stop.lat,stop.lng],{opacity: 0.5,}) 
+        let marker =L.marker([stop.lat,stop.lng],{opacity: 1,}) 
              .addTo(map)
         .bindPopup(`<h3>${stop.title}<h3>
         <a href = ${stop.wikipedia} ">Wikipedia</a>`
